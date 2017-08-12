@@ -1,0 +1,9 @@
+<p>
+  cart works!
+</p>
+<ul *ngIf="cart.length>0">
+  <li *ngFor="let c of cart">
+    {{c.name}}
+  </li>
+</ul>
+<button (click)="clearCart()">Clear Cart's list!</button><button (click)="setCartDefault()">Add default to Cart</button>

@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { CurrencyPipe } from '@angular/common';
+
+import {ProductsServiceService} from './services/products-service.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  constructor(
+    private productService: ProductsServiceService
+  ) { }
+
+  // class properties
+  products: object = {};
+  title= 'Shop';
+  name = 'Shop application';
+  descriptio = 'Applicaition to lean Angular2+ posipilities';
+  price = 100;
+  categorys = [
+    {id: 0, name: 'CategoryA'},
+    {id: 1, name: 'CategoryB'},
+    {id: 2, name: 'CategoryC'},
+    {id: 3, name: 'CategoryD'}
+  ];
+  isAvailable = true;
+  
+  ngOnInit (): void {
+    console.log('ngOnInit invoke this.productService.getProducts ');
+    this.products = this.productService.getProducts();
+  }
+
+  buyEvent(event) {
+    console.log(event);
+  }
 }
