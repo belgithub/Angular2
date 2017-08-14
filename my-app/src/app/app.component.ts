@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CurrencyPipe } from '@angular/common';
+
 
 import {ProductsServiceService} from './services/products-service.service';
 
@@ -19,6 +19,12 @@ export class AppComponent {
   name = 'Shop application';
   descriptio = 'Applicaition to lean Angular2+ posipilities';
   price = 100;
+  // enum Category = {
+  //   CategoryA,
+  //   CategoryB,
+  //   CategoryC,
+  //   CategoryD
+  // };
   categorys = [
     {id: 0, name: 'CategoryA'},
     {id: 1, name: 'CategoryB'},
